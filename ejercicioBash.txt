@@ -1,0 +1,130 @@
+EJERCICIO 1)
+Punto 1) pwd
+/home/runner/Introduccion-a-Bash
+
+Punto 2)ls
+archivoNuevo.txt  lyrics.txt  main.sh  replit.nix
+
+Punto 3)stat lyrics.txt 
+  File: lyrics.txt
+  Size: 2869        Blocks: 8          IO Block: 4096   regular file
+Device: 0,1570  Inode: 267         Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/  runner)   Gid: ( 1000/  runner)
+Access: 2023-05-22 15:24:19.256559640 +0000
+Modify: 2023-05-22 15:24:19.256559640 +0000
+Change: 2023-05-22 15:25:52.841254138 +0000
+ Birth: 2023-05-22 15:25:52.841254138 +0000
+
+Punto 4) ls -sh
+total 12K
+   0 archivoNuevo.txt  4.0K main.sh
+4.0K lyrics.txt        4.0K replit.nix
+
+
+Punto 5) ls -sh > archivoNuevo.txt 
+
+
+Punto 6) ls -l archivoNuevo.txt 
+-rw-r--r-- 1 runner runner 77 May 22 15:28 archivoNuevo.txt
+
+Punto 7) mkdir carpetita
+         cd carpetita/
+
+
+Punto 8) cat > nuevoArchiv.txt
+         ps -e
+    PID TTY          TIME CMD
+      1 ?        00:00:00 .pid1-wrapped
+     16 pts/0    00:00:00 bash
+     17 pts/1    00:00:00 bash
+     20 ?        00:00:00 bash-language-s
+     69 pts/0    00:00:00 ps
+     ps -e > nuevoArchiv.txt 
+
+
+Punto 10) cat > mis_archivos.txt
+          ls /home/runner/Introduccion-a-Bash/carpetita > mis_archivos.txt
+
+
+EJERCICIO 2)
+Punto 1)
+$ top (^m)
+02:30:38 up  2:27,  0 users,  load average: 11.32, 10.50, 10.38
+Tasks:   5 total,   1 running,   4 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 32.7 us, 27.2 sy,  0.0 ni, 37.2 id,  1.5 wa,  0.0 hi,  1.4 si,  0.0 st
+MiB Mem :  64308.8 total,  17316.8 free,  21527.4 used,  25464.6 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.  42292.6 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                              
+     29 runner    20   0   10.9g  69340  38064 S   0.0   0.1   0:00.68 bash-language-s                                                                      
+      1 runner    20   0 1768764  30272  17172 S   0.7   0.0   0:00.97 .pid1-wrapped                                                                        
+     15 runner    20   0    8016   4568   3412 S   0.0   0.0   0:00.00 bash                                                                                 
+     14 runner    20   0    8008   4496   3504 S   0.0   0.0   0:00.00 bash                                                                                 
+    469 runner    20   0    9092   3596   3064 R   0.0   0.0   0:00.00 top                                                                                  
+
+$ top (^t)
+02:31:22 up  2:28,  0 users,  load average: 12.26, 10.85, 10.51
+Tasks:   5 total,   1 running,   4 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 35.6 us, 36.4 sy,  0.0 ni, 21.8 id,  3.5 wa,  0.0 hi,  2.7 si,  0.0 st
+MiB Mem :  64308.8 total,  17316.6 free,  21619.9 used,  25372.4 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.  42201.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                              
+      1 runner    20   0 1768764  30492  17172 S   0.7   0.0   0:01.21 .pid1-wrapped                                                                        
+     29 runner    20   0   10.9g  69340  38064 S   0.0   0.1   0:00.68 bash-language-s                                                                      
+     14 runner    20   0    8008   4496   3504 S   0.0   0.0   0:00.00 bash                                                                                 
+     15 runner    20   0    8016   4568   3412 S   0.0   0.0   0:00.00 bash                                                                                 
+    622 runner    20   0    9092   3660   3132 R   0.0   0.0   0:00.00 top                                                                                  
+
+$ top (^o)
+ 02:32:00 up  2:29,  0 users,  load average: 11.66, 10.89, 10.53
+Tasks:   5 total,   1 running,   4 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 26.1 us, 35.1 sy,  1.8 ni, 31.5 id,  4.5 wa,  0.0 hi,  0.9 si,  0.0 st
+MiB Mem :  64308.8 total,  17594.7 free,  21896.6 used,  24817.6 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.  41925.4 avail Mem 
+add filter #1 (case sensitive) as: [!]FLD?VAL 
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                              
+      1 runner    20   0 1768764  30492  17172 S   0.0   0.0   0:01.42 .pid1-wrapped                                                                        
+     14 runner    20   0    8008   4496   3504 S   0.0   0.0   0:00.00 bash                                                                                 
+     15 runner    20   0    8016   4568   3412 S   0.0   0.0   0:00.00 bash                                                                                 
+     29 runner    20   0   10.9g  69340  38064 S   0.0   0.1   0:00.68 bash-language-s                                                                      
+    770 runner    20   0    9092   3772   3240 R   0.0   0.0   0:00.00 top    
+                                                                              
+Punto 2)
+cat: Muestra el contenido completo de uno o varios archivos de texto sin pausas ni interacciones. Se utiliza para ver el contenido completo de archivos pequeños o combinar archivos.
+
+more: Muestra el contenido de archivos de texto de manera paginada, mostrando una página a la vez y esperando a que el usuario presione una tecla para avanzar. Permite desplazarse hacia abajo y ofrece opciones básicas de navegación.
+
+less: Similar a more, muestra el contenido de archivos de texto de manera paginada, pero con funcionalidades adicionales. Permite desplazarse hacia arriba y hacia abajo, buscar texto, usar marcadores y proporciona opciones avanzadas de navegación.
+
+Punto 3) ls -sh > archivos.txt
+
+Punto 4)cat > archivo4.txt
+
+
+Punto 5) cat archivos.txt >info_txt.txt
+
+Punto 6) rm archivos.txt
+
+Punto 7) touch manual.txt
+         cat info_txt.txt 
+total 8.0K
+   0 archivos.txt
+4.0K mis_archivos.txt
+4.0K nuevoArchiv.txt
+
+Manual de Comandos
+
+Comando: ls
+Descripción: El comando ls se utiliza para listar los archivos y carpetas en un directorio.
+Uso: ls [opciones] [ruta]
+Ejemplo: ls -l /home
+
+Comando: kill
+Descripción: El comando kill se utiliza para enviar una señal a un proceso para terminarlo.
+Uso: kill [opciones] PID
+Ejemplo: kill -9 1234
+
+Punto 8) cp info_txt.txt manual.txt (lo que quiero copiar y en donde)
+         rm info_txt.txt 
+
